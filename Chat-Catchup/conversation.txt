@@ -1,0 +1,139 @@
+Chat Catchup
+Date: 2026-09-11
+
+USER
+Yesterday we were talking about what CJ can do in order to better perform when it comes to VR and/or Meta Quest AV/VR programming and visuals. Ask him up to three questions in multiple-choice format that would then allow him to learn as he goes. From now on, save our chat log in a new folder called "Chat-Catchup" and insert the conversation log there in a text file we can read by a rendered HTML page created each time we do this.
+
+ASSISTANT
+I created the Chat-Catchup archive with this text transcript and a rendered HTML reader. I also prepared three multiple-choice questions to identify CJ's starting point, preferred learning project, and visual priorities for VR/Meta Quest development.
+
+USER
+- A. 3D visuals and effects
+- B. Movement and game mechanics
+- C. Menus, sound, and experience design
+
+ASSISTANT
+These are the refined choices for Question 1. CJ should choose one of them. Questions 2 and 3 can follow after that choice so the next lesson matches his interests.
+
+USER
+- A. 3D visuals and effects
+- B. Movement and game mechanics
+- C. Menus, sound, and experience design
+
+ASSISTANT
+CJ has repeated the three categories, but has not selected one yet. He should choose A, B, or C so the next two questions can be tailored to that learning path.
+
+USER
+3D visuals and effects
+
+ASSISTANT
+CJ selected A for Question 1. The learning path will focus on creating strong VR visuals and effects while keeping the Meta Quest experience performant.
+
+USER
+Lighting and shadows
+
+ASSISTANT
+CJ selected B for Question 3. The first technical lesson will focus on lighting and shadows for believable environments, with Quest performance in mind. Only Question 2 remains.
+
+USER
+Realistic sci-fi room
+
+ASSISTANT
+CJ selected A for Question 2. His first project milestone is a small realistic sci-fi room with detailed materials, one strong key light, baked shadows, and a Quest performance check.
+
+USER
+1. Build one small room with walls, a floor, and one focal object.
+
+ASSISTANT
+Step 1 is complete. Next, add one main light to the room and adjust its position until the focal object has a clear highlight and readable shadow. Keep the scene simple while learning how the light changes the space.
+
+USER
+I don't have the Meta Quest with me at the moment.
+
+ASSISTANT
+That is okay. Continue in the editor or desktop preview for now. Add and adjust the main light, inspect the highlight and shadow, and postpone the headset performance check until the Meta Quest is available.
+
+USER
+How do I code this?
+
+ASSISTANT
+In Unity, create a C# script named SciFiRoomLight and attach it to an empty GameObject. Drag the room's main Light into the Main Light field in the Inspector. Use the arrow keys in the desktop preview to rotate the light and compare the highlight and shadow. This works without a Meta Quest.
+
+USER
+I can't use Unity at the moment.
+
+ASSISTANT
+Use the browser practice scene instead. Open light-practice.html, move the two sliders, and observe how the highlight and shadow change. It uses HTML, CSS, and JavaScript, so it works without Unity or a Meta Quest.
+
+BROWSER PRACTICE
+Open Chat-Catchup/light-practice.html. Move the light left and right, then high and low. Notice where the focal object's bright face and shadow move. This teaches the same lighting idea before returning to Unity.
+
+CODE
+using UnityEngine;
+
+public class SciFiRoomLight : MonoBehaviour
+{
+	[SerializeField] private Light mainLight;
+	[SerializeField] private float rotationSpeed = 35f;
+
+	private void Start()
+	{
+		mainLight.type = LightType.Directional;
+		mainLight.intensity = 1.2f;
+		mainLight.shadows = LightShadows.Soft;
+	}
+
+	private void Update()
+	{
+		float horizontal = Input.GetAxis("Horizontal");
+		float vertical = Input.GetAxis("Vertical");
+		transform.Rotate(Vector3.up, horizontal * rotationSpeed * Time.deltaTime);
+		transform.Rotate(Vector3.right, -vertical * rotationSpeed * Time.deltaTime);
+	}
+}
+
+SETUP
+Create a Directional Light, place the focal object where it can receive light, and make sure the room has a floor and walls. Attach the script to an empty GameObject, assign the Directional Light, then press Play and use the arrow keys. Later, test the same scene on Meta Quest and tune the shadows for performance.
+
+FIRST LESSON
+1. Build one small room with simple walls, a floor, and one focal object.
+2. Add one main light to create the sci-fi mood and clear shadows.
+3. Bake the room's lighting where possible instead of relying on many real-time lights.
+4. Test on the Meta Quest and check that the scene stays smooth before adding more detail.
+
+QUESTIONS FOR CJ
+
+1. Which part of VR development sounds most exciting right now?
+A. 3D visuals and effects
+B. Movement and game mechanics
+C. Menus, sound, and experience design
+
+2. What visual style would you most like to build first?
+A. A realistic sci-fi room with detailed materials and dramatic lighting
+B. A colorful fantasy world with glowing objects and magical particles
+C. A stylized cartoon world with bold colors and simple shapes
+D. A cinematic space scene with portals, fog, and animated effects
+
+3. Which visual skill should you practice first?
+A. Modeling and efficient textures for Quest performance
+B. Lighting and shadows for believable environments
+C. Materials, colors, and particles for a strong art style
+D. Performance profiling to keep visuals smooth and responsive
+
+NEXT STEP
+Without the headset, add one main light in the editor or desktop preview. Move it until the focal object has a clear highlight and readable shadow, then report what changed. Test on Meta Quest later when it is available.
+
+USER
+What is the Light Practice scene?
+
+ASSISTANT
+It is a small browser-based sci-fi room for practicing lighting. The yellow circle is the main light, the labeled block is the focal object, and the dark shape is its shadow. Use the two sliders to move the light left or right and high or low. The goal is to observe how light position changes the bright face and shadow direction before using Unity or a Meta Quest.
+
+USER
+What do I do with light-practice.html?
+
+ASSISTANT
+Open light-practice.html in a browser. Move the Light left to right slider and the Light high to low slider. Watch the yellow light, the bright face of the focal object, and the dark shadow. Try three different positions and describe how the shadow changes.
+
+HOW TO OPEN IT
+In VS Code, right-click light-practice.html and choose Open with Live Server if that extension is installed. Otherwise run `python3 -m http.server 8000` in the project folder and visit `http://localhost:8000/Chat-Catchup/light-practice.html`.

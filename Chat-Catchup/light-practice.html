@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Light Practice | CJ's VR Project</title>
+  <style>
+    :root {
+      --ink: #e8f1f0;
+      --muted: #9cb2b0;
+      --room: #0062ff;
+      --floor: #6ff501;
+      --accent: #f5b65c;
+      --cyan: #75e0d0;
+      --shadow-x: 35px;
+      --shadow-y: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #0b151b;
+      color: var(--ink);
+      font: 1rem/1.5 Georgia, "Times New Roman", serif;
+    }
+
+    main {
+      width: min(58rem, 100%);
+      margin: auto;
+      padding: 2rem 1rem 3rem;
+    }
+
+    header {
+      margin-bottom: 1.5rem;
+    }
+
+    .kicker {
+      margin: 0 0 .5rem;
+      color: var(--accent);
+      font: 700 .75rem/1.2 "Trebuchet MS", sans-serif;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font: 700 clamp(2.2rem, 7vw, 4rem)/.95 "Trebuchet MS", sans-serif;
+    }
+
+    .lede {
+      max-width: 38rem;
+      color: var(--muted);
+    }
+
+    .stage {
+      position: relative;
+      min-height: 25rem;
+      overflow: hidden;
+      border: 1px solid #31525a;
+      background: linear-gradient(150deg, #27444a, var(--room) 55%);
+    }
+
+    .stage::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at var(--light-x, 70%) var(--light-y, 25%), rgba(245, 182, 92, .24), transparent 26%);
+    }
+
+    .floor {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 34%;
+      transform: perspective(18rem) rotateX(9deg);
+      transform-origin: bottom;
+      background: repeating-linear-gradient(90deg, transparent 0 3rem, rgba(117, 224, 208, .08) 3rem 3.1rem), var(--floor);
+      border-top: 1px solid #4e7777;
+    }
+
+    .light {
+      position: absolute;
+      z-index: 3;
+      top: var(--light-y, 25%);
+      left: var(--light-x, 70%);
+      width: 1.1rem;
+      height: 1.1rem;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 2rem 1rem rgba(245, 182, 92, .27);
+    }
+
+    .object {
+      position: absolute;
+      z-index: 2;
+      right: 28%;
+      bottom: 21%;
+      width: 7rem;
+      height: 7rem;
+      background: linear-gradient(135deg, #b3d8d1, #477f80);
+      border: 2px solid #d8fff4;
+      box-shadow: inset -1.5rem -1rem 1.5rem rgba(0, 0, 0, .3), var(--shadow-x) var(--shadow-y) 0 -4px rgba(2, 8, 12, .55);
+      transform: rotate(12deg);
+    }
+
+    .object::before {
+      content: "FOCAL";
+      position: absolute;
+      inset: 1.7rem .7rem;
+      display: grid;
+      place-items: center;
+      color: #113238;
+      font: 700 .75rem "Trebuchet MS", sans-serif;
+      letter-spacing: .12em;
+      border: 1px solid rgba(17, 50, 56, .5);
+    }
+
+    .controls {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid #31525a;
+      background: #102127;
+    }
+
+    label {
+      display: grid;
+      gap: .35rem;
+      color: var(--muted);
+      font: .9rem "Trebuchet MS", sans-serif;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--accent);
+    }
+
+    .readout {
+      margin: 0;
+      color: var(--cyan);
+      font-family: "Trebuchet MS", sans-serif;
+    }
+
+    a {
+      color: var(--accent);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <p class="kicker">Browser practice</p>
+      <h1>Light the room</h1>
+      <p class="lede">Move the light and watch how its highlight and shadow change. This is a desktop-friendly practice
+        version of the Quest lighting exercise.</p>
+    </header>
+
+    <section class="stage" id="stage" aria-label="Interactive sci-fi room">
+      <div class="floor"></div>
+      <div class="light" aria-label="Main light"></div>
+      <div class="object" aria-label="Focal object"></div>
+    </section>
+
+    <section class="controls" aria-label="Lighting controls">
+      <label>Light left to right
+        <input id="horizontal" type="range" min="15" max="85" value="70">
+      </label>
+      <label>Light high to low
+        <input id="vertical" type="range" min="12" max="58" value="25">
+      </label>
+      <p class="readout" id="readout">Light position: 70% across, 25% high</p>
+    </section>
+
+    <p><a href="index.html">Back to Chat Catchup</a></p>
+  </main>
+  <script>
+    const stage = document.querySelector('#stage');
+    const horizontal = document.querySelector('#horizontal');
+    const vertical = document.querySelector('#vertical');
+    const readout = document.querySelector('#readout');
+
+    function moveLight() {
+      const x = Number(horizontal.value);
+      const y = Number(vertical.value);
+      const shadowX = Math.round((50 - x) * 1.4);
+      const shadowY = Math.round((y - 35) * .9);
+      stage.style.setProperty('--light-x', `${x}%`);
+      stage.style.setProperty('--light-y', `${y}%`);
+      stage.style.setProperty('--shadow-x', `${shadowX}px`);
+      stage.style.setProperty('--shadow-y', `${shadowY}px`);
+      readout.textContent = `Light position: ${x}% across, ${100 - y}% high`;
+    }
+
+    horizontal.addEventListener('input', moveLight);
+    vertical.addEventListener('input', moveLight);
+    moveLight();
+  </script>
+</body>
+
+</html>

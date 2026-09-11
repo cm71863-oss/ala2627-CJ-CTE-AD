@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chat Catchup | CJ's VR Project</title>
+  <meta name="description"
+    content="A readable archive of the CJ's VR project conversation and next learning questions.">
+  <style>
+    :root {
+      --ink: #17232d;
+      --muted: #60707a;
+      --paper: #f5f1e8;
+      --panel: #fffdf8;
+      --line: #d9d1c2;
+      --teal: #087e78;
+      --orange: #d66b3d;
+      --shadow: 0 18px 50px rgba(45, 55, 47, .09);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 1rem/1.65 Georgia, "Times New Roman", serif;
+    }
+
+    main {
+      max-width: 58rem;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 5rem;
+    }
+
+    header {
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 1.4rem;
+    }
+
+    .kicker {
+      margin: 0 0 .65rem;
+      color: var(--orange);
+      font: 700 .75rem/1.2 "Trebuchet MS", sans-serif;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 12ch;
+      font: 700 clamp(2.7rem, 8vw, 5.6rem)/.92 "Trebuchet MS", sans-serif;
+      letter-spacing: 0;
+    }
+
+    .date {
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font: .9rem/1.4 "Trebuchet MS", sans-serif;
+    }
+
+    .intro {
+      max-width: 42rem;
+      margin: 2.5rem 0 3rem;
+      font-size: 1.25rem;
+    }
+
+    .transcript {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .message {
+      padding: 1.4rem 1.5rem;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .message h2 {
+      margin: 0 0 .6rem;
+      color: var(--teal);
+      font: 700 .78rem/1.2 "Trebuchet MS", sans-serif;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .message p {
+      margin: 0;
+    }
+
+    .questions {
+      margin-top: 4rem;
+    }
+
+    .section-title {
+      margin: 0 0 .6rem;
+      font: 700 2rem/1.1 "Trebuchet MS", sans-serif;
+    }
+
+    .section-note {
+      margin: 0 0 1.5rem;
+      color: var(--muted);
+    }
+
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    fieldset {
+      margin: 0;
+      padding: 1.25rem;
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+
+    legend {
+      max-width: 100%;
+      padding: 0 .35rem;
+      font-weight: 700;
+    }
+
+    label {
+      display: block;
+      margin: .65rem 0;
+      padding: .65rem .75rem;
+      border: 1px solid var(--line);
+      cursor: pointer;
+    }
+
+    label:has(input:checked) {
+      border-color: var(--teal);
+      background: #e5f3ee;
+    }
+
+    input {
+      accent-color: var(--teal);
+      margin-right: .5rem;
+    }
+
+    .next {
+      margin-top: 1.5rem;
+      padding: 1rem 1.25rem;
+      border-left: 4px solid var(--orange);
+      background: #fff7ed;
+    }
+
+    pre {
+      overflow-x: auto;
+      margin: 1rem 0 0;
+      padding: 1rem;
+      background: #17232d;
+      color: #f5f1e8;
+      font: .85rem/1.55 "Courier New", monospace;
+    }
+
+    footer {
+      margin-top: 4rem;
+      color: var(--muted);
+      font: .85rem/1.5 "Trebuchet MS", sans-serif;
+    }
+
+    @media (max-width: 35rem) {
+      main {
+        padding-top: 2rem;
+      }
+
+      .message,
+      fieldset {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <p class="kicker">Conversation archive</p>
+      <h1>Chat Catchup</h1>
+      <p class="date">September 11, 2026 · CJ's VR project</p>
+    </header>
+
+    <p class="intro">A working conversation about building stronger skills in VR, Meta Quest programming, and visual
+      design through small projects.</p>
+
+    <section class="transcript" aria-label="Conversation transcript">
+      <article class="message">
+        <h2>User</h2>
+        <p>Yesterday we were talking about what CJ can do in order to better perform when it comes to VR and/or Meta
+          Quest AV/VR programming and visuals. Ask him up to three questions in multiple-choice format that would then
+          allow him to learn as he goes. From now on, save our chat log in a new folder called “Chat-Catchup” and insert
+          the conversation log there in a text file we can read by a rendered HTML page created each time we do this.
+        </p>
+      </article>
+      <article class="message">
+        <h2>Assistant</h2>
+        <p>I created the Chat-Catchup archive with this text transcript and a rendered HTML reader. I also prepared
+          three multiple-choice questions to identify CJ's starting point, preferred learning project, and visual
+          priorities for VR/Meta Quest development.</p>
+      </article>
+      <article class="message">
+        <h2>User</h2>
+        <p>CJ's refined choices for the first question are: A. 3D visuals and effects; B. Movement and game mechanics;
+          C. Menus, sound, and experience design.</p>
+      </article>
+      <article class="message">
+        <h2>Assistant</h2>
+        <p>Choose one of these three choices for Question 1. Questions 2 and 3 will follow after that answer so the
+          next lesson matches CJ's interests.</p>
+      </article>
+      <article class="message">
+        <h2>User</h2>
+        <p>CJ repeated the three categories: A. 3D visuals and effects; B. Movement and game mechanics; C. Menus,
+          sound, and experience design.</p>
+      </article>
+      <article class="message">
+        <h2>Assistant</h2>
+        <p>CJ still needs to choose A, B, or C. That selection will determine the next two questions and learning path.
+        </p>
+      </article>
+      <article class="message">
+        <h2>User</h2>
+        <p>3D visuals and effects.</p>
+      </article>
+      <article class="message">
+        <h2>Assistant</h2>
+        <p>CJ selected A for Question 1. The learning path will focus on creating strong VR visuals and effects while
+          keeping the Meta Quest experience performant.</p>
+      </article>
+      <article class="message">
+        <h2>User</h2>
+        <p>Lighting and shadows.</p>
+      </article>
+      <article class="message">
+        <h2>Assistant</h2>
+        <p>CJ selected B for Question 3. The first technical lesson will focus on lighting and shadows for believable
+          environments, with Quest performance in mind. Only Question 2 remains.</p>
+      </article>
+      <article class="message">
+        <h2>User</h2>
+        <p>Realistic sci-fi room.</p>
+      </article>
+      <article class="message">
+        <h2>Assistant</h2>
+        <p>CJ selected A for Question 2. His first project milestone is a small realistic sci-fi room with detailed
+          materials, one strong key light, baked shadows, and a Quest performance check.</p>
+      </article>
+      <article class="message">
+        <h2>User</h2>
+        <p>Step 1: Build one small room with walls, a floor, and one focal object.</p>
+      </article>
+      <article class="message">
+        <h2>Assistant</h2>
+        <p>Step 1 is complete. Next, add one main light and adjust its position until the focal object has a clear
+          highlight and readable shadow.</p>
+      </article>
+      <article class="message">
+        <h2>User</h2>
+        <p>I don't have the Meta Quest with me at the moment.</p>
+      </article>
+      <article class="message">
+        <h2>Assistant</h2>
+        <p>That is okay. Continue in the editor or desktop preview for now. Add and adjust the main light, then
+          postpone the headset performance check until the Meta Quest is available.</p>
+      </article>
+      <article class="message">
+        <h2>User</h2>
+        <p>How do I code this?</p>
+      </article>
+      <article class="message">
+        <h2>Assistant</h2>
+        <p>In Unity, create a C# script named <strong>SciFiRoomLight</strong> and attach it to an empty GameObject.
+          Drag the room's main Light into the Main Light field in the Inspector. Use the arrow keys in the desktop
+          preview to rotate the light and compare the highlight and shadow.</p>
+        <pre><code>using UnityEngine;
+
+public class SciFiRoomLight : MonoBehaviour
+{
+    [SerializeField] private Light mainLight;
+    [SerializeField] private float rotationSpeed = 35f;
+
+    private void Start()
+    {
+        mainLight.type = LightType.Directional;
+        mainLight.intensity = 1.2f;
+        mainLight.shadows = LightShadows.Soft;
+    }
+
+    private void Update()
+    {
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        transform.Rotate(Vector3.up, horizontal * rotationSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.right, -vertical * rotationSpeed * Time.deltaTime);
+    }
+}</code></pre>
+        <p>Create a Directional Light, assign it to the script, press Play, and use the arrow keys. Test on Meta
+          Quest later when the headset is available.</p>
+      </article>
+      <article class="message">
+        <h2>User</h2>
+        <p>I can't use Unity at the moment.</p>
+      </article>
+      <article class="message">
+        <h2>Assistant</h2>
+        <p>Use the browser practice scene instead. Open <a href="light-practice.html">light-practice.html</a>, move
+          the two sliders, and observe how the highlight and shadow change. It works without Unity or a Meta Quest.</p>
+      </article>
+      <article class="message">
+        <h2>User</h2>
+        <p>What is the Light Practice scene?</p>
+      </article>
+      <article class="message">
+        <h2>Assistant</h2>
+        <p>It is a small browser-based sci-fi room for practicing lighting. The yellow circle is the main light, the
+          labeled block is the focal object, and the dark shape is its shadow. Use the two sliders to move the light
+          left or right and high or low.</p>
+      </article>
+      <article class="message">
+        <h2>User</h2>
+        <p>What do I do with light-practice.html?</p>
+      </article>
+      <article class="message">
+        <h2>Assistant</h2>
+        <p>Open it in a browser. Move the Light left to right and Light high to low sliders, then watch the yellow
+          light, the bright face of the focal object, and its dark shadow. Try three positions and describe how the
+          shadow changes.</p>
+        <p>In VS Code, use <strong>Open with Live Server</strong> if available. Otherwise run
+          <code>python3 -m http.server 8000</code> in the project folder and visit
+          <code>http://localhost:8000/Chat-Catchup/light-practice.html</code>.
+        </p>
+      </article>
+    </section>
+
+    <section class="questions" aria-labelledby="questions-title">
+      <h2 class="section-title" id="questions-title">Three questions for CJ</h2>
+      <p class="section-note">Choose one answer per question. The choices will shape the next small lesson.</p>
+      <form>
+        <fieldset>
+          <legend>1. Which part of VR development sounds most exciting right now?</legend>
+          <label><input type="radio" name="q1" checked> A. 3D visuals and effects</label>
+          <label><input type="radio" name="q1"> B. Movement and game mechanics</label>
+          <label><input type="radio" name="q1"> C. Menus, sound, and experience design</label>
+        </fieldset>
+        <fieldset>
+          <legend>2. What visual style would you most like to build first?</legend>
+          <label><input type="radio" name="q2" checked> A. A realistic sci-fi room with detailed materials and dramatic
+            lighting</label>
+          <label><input type="radio" name="q2"> B. A colorful fantasy world with glowing objects and magical
+            particles</label>
+          <label><input type="radio" name="q2"> C. A stylized cartoon world with bold colors and simple shapes</label>
+          <label><input type="radio" name="q2"> D. A cinematic space scene with portals, fog, and animated
+            effects</label>
+        </fieldset>
+        <fieldset>
+          <legend>3. Which visual skill should you practice first?</legend>
+          <label><input type="radio" name="q3"> A. Modeling and efficient textures for Quest performance</label>
+          <label><input type="radio" name="q3" checked> B. Lighting and shadows for believable environments</label>
+          <label><input type="radio" name="q3"> C. Materials, colors, and particles for a strong art style</label>
+          <label><input type="radio" name="q3"> D. Performance profiling to keep visuals smooth and responsive</label>
+        </fieldset>
+      </form>
+      <p class="next"><strong>Next step:</strong> Open <a href="light-practice.html">the browser lighting practice</a>.
+        Move the light left and right, then high and low. Notice where the focal object's bright face and shadow move.
+        Return to Unity later when it is available.
+      </p>
+    </section>
+
+    <footer>Plain-text transcript: <a href="conversation.txt">conversation.txt</a></footer>
+  </main>
+</body>
+
+</html>
