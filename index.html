@@ -4,57 +4,97 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- CHANGE THIS. It is the name on the browser tab, and it is what Google shows. -->
-  <title>CJ's VR Project</title>
-
-  <!-- CHANGE THIS TOO. One sentence. It is what shows under your link when someone shares it. -->
-  <meta name="description" content="my vision is to make a multi dementional game ware you can go to diffrent universes to diffrent movies like spider man ware you can be spider man or how to train your dragon ware you can befriend toothles or any other dragon ore star wars like universe that you can use light sabers  .">
-
+  <meta name="theme-color" content="#11151c">
+  <meta name="description"
+    content="CJ is a student creator building interactive worlds, websites, and game ideas from Mesa, Arizona.">
+  <title>CJ / Digital Creator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
-  <header>
-    <!-- Exactly ONE h1 on the page. It is your name. -->
-    <h1>CJ's - Project</h1>
-    <p class="tagline">One line: what you do, and who it is for.</p>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="CJ home"><span class="brand-mark">CJ</span><span>creative lab</span></a>
+    <div class="header-actions"><span class="availability"><span class="pulse"></span> open to ideas</span><button
+        class="theme-toggle" type="button" aria-label="Switch color theme"
+        title="Switch color theme"><span></span></button></div>
   </header>
-
-  <main>
-
-    <section>
-      <h2>What I am working on</h2>
-      <ul>
-        <li><strong>Something real.</strong> What it is, in one line.</li>
-        <li><strong>Something else.</strong> Keep it concrete — a thing you made, not a skill you have.</li>
-      </ul>
+  <main id="top" class="page-shell">
+    <section class="bento-grid" aria-label="About CJ">
+      <article class="tile intro-tile reveal">
+        <div class="tile-label"><span class="status-dot"></span> hello, i'm CJ</div>
+        <h1>I build worlds<br><em>worth entering.</em></h1>
+        <p class="intro-copy">A student creator from Mesa, Arizona, learning to turn big imagination into interactive
+          experiences.</p><a class="arrow-link" href="#work">see what i'm making <span>↗</span></a>
+        <div class="intro-orbit orbit-one"></div>
+        <div class="intro-orbit orbit-two"></div>
+      </article>
+      <article class="tile portrait-tile reveal delay-one">
+        <div class="portrait-shape"><span>CJ</span></div><span class="portrait-caption">maker / explorer</span>
+      </article>
+      <article class="tile clock-tile reveal delay-two">
+        <div class="tile-label">local time <span class="live-label">live</span></div>
+        <p class="clock" id="clock">--:--</p>
+        <p class="location">Mesa, AZ <span>/</span> MST</p>
+      </article>
+      <article class="tile focus-tile reveal delay-one">
+        <div class="tile-label">currently focused on</div>
+        <div class="focus-title"><span class="focus-icon">+</span><strong>immersive<br>game worlds</strong></div>
+        <div class="meter"><span></span></div>
+        <div class="meter-meta"><span>curiosity</span><span>always loading</span></div>
+      </article>
+      <article class="tile statement-tile reveal delay-two"><span class="quote-mark">&ldquo;</span>
+        <p>The best ideas feel a little impossible right before you make them real.</p>
+      </article>
+      <article class="tile skills-tile reveal delay-three">
+        <div class="tile-label">tools in my orbit</div>
+        <div class="skill-list">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span><span>Blender</span></div>
+      </article>
     </section>
-
-    <section>
-      <h2>What I am learning</h2>
-      <p>
-        Two or three sentences. Name the actual tools. "I am learning networking and how data
-        centers stay online" beats "I am passionate about technology."
-      </p>
+    <section id="work" class="work-section">
+      <div class="section-heading reveal"><span class="eyebrow">01 / selected experiments</span>
+        <h2>Things taking shape.</h2>
+        <p>Small projects, big questions, and a lot of learning in public.</p>
+      </div>
+      <div class="filter-row reveal delay-one" role="group" aria-label="Filter projects"><button
+          class="filter-button is-active" type="button" data-filter="all">all</button><button class="filter-button"
+          type="button" data-filter="web">web</button><button class="filter-button" type="button"
+          data-filter="games">games</button></div>
+      <div class="project-list">
+        <article class="project-card reveal delay-one" data-category="games"><span class="project-number">01</span>
+          <div><span class="project-type">game concept</span>
+            <h3>Portalbound</h3>
+            <p>A multi-universe adventure where every choice opens a different door.</p>
+          </div><span class="project-arrow">/</span>
+        </article>
+        <article class="project-card reveal delay-two" data-category="web"><span class="project-number">02</span>
+          <div><span class="project-type">web experiment</span>
+            <h3>Light Practice</h3>
+            <p>A playground for motion, color, and the small details that make a page feel alive.</p>
+          </div><span class="project-arrow">/</span>
+        </article>
+        <article class="project-card reveal delay-three" data-category="games"><span class="project-number">03</span>
+          <div><span class="project-type">interactive fiction</span>
+            <h3>The Vault</h3>
+            <p>A text adventure about curiosity, risk, and finding your way through the dark.</p>
+          </div><span class="project-arrow">/</span>
+        </article>
+      </div>
     </section>
-
-    <section>
-      <h2>Get in touch</h2>
-      <!--
-        Put an email you will still control after graduation. If you only have the school one
-        today, that is fine — put it in, and change it later. That is what commits are for.
-      -->
-      <p><a href="mailto:you@example.com">you@example.com</a></p>
+    <section class="contact-section reveal"><span class="eyebrow">02 / say hello</span>
+      <h2>Have an idea?<br><em>Let's build it.</em></h2><a class="contact-link"
+        href="mailto:hello@cj-creative.dev">hello@cj-creative.dev <span>/</span></a>
     </section>
-
   </main>
-
-  <footer>
-    <p>Built by hand. Last updated <!-- change this when you change the page --> August 2026.</p>
-  </footer>
-
+  <footer><span>CJ / creative lab</span><span>built by hand / 2026</span></footer>
+  <script src="app.js"></script>
 </body>
 
 </html>
